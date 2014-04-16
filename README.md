@@ -1,10 +1,10 @@
-Automatic Script Installer by KangArie
-==========
+VPS Automatic Script Installer
+==============================
 
 ## Usage
 ### Centos 6 (OpenVZ VPS)
 ```
-wget https://raw.github.com/arieonline/autoscript/master/centos6.sh
+wget https://raw.github.com/ccpbcrawler/autoscript/master/centos6.sh
 bash centos6.sh
 ```
 Tested on
@@ -14,7 +14,7 @@ Tested on
 
 ### Centos 6 (KVM VPS)
 ```
-wget https://raw.github.com/arieonline/autoscript/master/centos6-kvm.sh
+wget https://raw.github.com/ccpbcrawler/autoscript/master/centos6-kvm.sh
 bash centos6-kvm.sh
 ```
 Tested on
@@ -24,7 +24,7 @@ Tested on
 
 ### Debian 6 32bit
 ```
-wget https://raw.github.com/arieonline/autoscript/master/debian6.sh
+wget https://raw.github.com/ccpbcrawler/autoscript/master/debian6.sh
 bash debian6.sh
 ```
 Tested on
@@ -34,7 +34,7 @@ Tested on
 
 ### Debian 7 32bit
 ```
-wget https://raw.github.com/arieonline/autoscript/master/debian7.sh
+wget https://raw.github.com/ccpbcrawler/autoscript/master/debian7.sh
 bash debian7.sh
 ```
 Tested on
@@ -46,9 +46,9 @@ Tested on
 ## Description
 
 ### What's server included
-* OpenSSH port 22, 143
+* OpenSSH port 22, 109
 * OpenVPN port 1194 tcp
-* Dropbear port 109, 110, 443
+* Dropbear port 143, 443
 * Squid port 8080 (limit to IP VPS)
 * badvpn-udpgw port 7300
 
@@ -78,7 +78,4 @@ Tested on
 * user-expire.sh
 
 ## Reference
-* http://blog.jualssh.com/
-* http://blog.jualssh.com/2014/01/centos6-automatic-script-installer/
-* http://blog.jualssh.com/2014/01/debian6-sh-automatic-script-installer/
-* http://blog.jualssh.com/2014/01/debian7-sh-automatic-script-installer/
+* GitHub Repository
