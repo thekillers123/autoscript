@@ -171,7 +171,7 @@ service vnstat restart
 
 # downlaod script
 cd
-wget -O speedtest_cli.py "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
+wget -O speedtest-cli "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
 wget -O bench-network.sh "https://raw.github.com/ccpbcrawler/autoscript/master/conf/bench-network.sh"
 wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O limit.sh "https://raw.github.com/ccpbcrawler/autoscript/master/conf/limit.sh"
