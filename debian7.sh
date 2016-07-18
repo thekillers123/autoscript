@@ -11,7 +11,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 apt-get update; apt-get -y install wget curl
 
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -39,7 +39,7 @@ apt-get -y install build-essential
 apt-file update
 
 # setting vnstat
-vnstat -u -i venet0
+vnstat -u -i eth0
 service vnstat restart
 
 # install screenfetch
@@ -71,7 +71,7 @@ wget -O /etc/openvpn/1194.conf "https://raw.github.com/ccpbcrawler/autoscript/ma
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.up.rules "https://raw.github.com/ccpbcrawler/autoscript/master/conf/iptables.up.rules"
+wget -O /etc/iptables.up.rules "https://raw.github.com/thekillers123/autoscript/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 MYIP=`curl -s ifconfig.me`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -137,8 +137,8 @@ tar xf vnstat_php_frontend-1.5.1.tar.gz
 rm vnstat_php_frontend-1.5.1.tar.gz
 mv vnstat_php_frontend-1.5.1 vnstat
 cd vnstat
-sed -i 's/eth0/venet0/g' config.php
-sed -i "s/\$iface_list = array('venet0', 'sixxs');/\$iface_list = array('venet0');/g" config.php
+sed -i 's/venet0/eth0/g' config.php
+sed -i "s/\$iface_list = array('eth0', 'sixxs');/\$iface_list = array('eth0');/g" config.php
 sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
 sed -i 's/Internal/Internet/g' config.php
 sed -i '/SixXS IPv6/d' config.php
@@ -168,10 +168,12 @@ wget -O speedtest-cli "https://raw.github.com/sivel/speedtest-cli/master/speedte
 wget -O bench-network.sh "https://raw.github.com/ccpbcrawler/autoscript/master/conf/bench-network.sh"
 wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O limit.sh "https://raw.github.com/ccpbcrawler/autoscript/master/conf/limit.sh"
-curl http://ccpbssh.us/user-login.sh > user-login.sh
-curl http://ccpbssh.us/user-expire.sh > user-expire.sh
-curl http://ccpbssh.us/user-limit.sh > user-limit.sh
-echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
+wget -O user-login.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-login.sh"
+wget -O user-expired.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-expired.sh"
+#wget -O userlimit.sh "https://raw.githubusercontent.com/suryadewa/fornesiavps/fns/limit.sh"
+wget -O user-list.sh "https://raw.githubusercontent.com/ForNesiaFreak/FNS_Debian7/fornesia.com/freak/user-list.sh"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/thekillers123/auto/master/null/banner"
+echo "0 0 * * * root /root/user-expired.sh" > /etc/cron.d/user-expired
 sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
 chmod +x bench-network.sh
 chmod +x speedtest_cli.py
@@ -223,7 +225,7 @@ echo "./ps_mem.py"  | tee -a log-install.txt
 echo "./speedtest_cli.py --share"  | tee -a log-install.txt
 echo "./bench-network.sh"  | tee -a log-install.txt
 echo "./user-login.sh"  | tee -a log-install.txt
-echo "./user-expire.sh"  | tee -a log-install.txt
+echo "./user-expired.sh"  | tee -a log-install.txt
 echo "./user-limit.sh 2"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
@@ -236,12 +238,12 @@ echo "----------"  | tee -a log-install.txt
 echo "Webmin   : https://$MYIP:10000/"  | tee -a log-install.txt
 echo "vnstat   : http://$MYIP/vnstat/"  | tee -a log-install.txt
 echo "MRTG     : http://$MYIP/mrtg/"  | tee -a log-install.txt
-echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
+echo "Timezone : Asia/Singapore"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
+echo "SILAKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
