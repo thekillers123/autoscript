@@ -56,7 +56,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.github.com/ccpbcrawler/autoscript/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Hey, it WORKS..!</pre>" > /home/vps/public_html/index.html
+echo "<pre>SETUP BY JOHNKER | johnker.cf</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.github.com/ccpbcrawler/autoscript/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
@@ -179,7 +179,7 @@ chmod +x bench-network.sh
 chmod +x speedtest_cli.py
 chmod +x ps_mem.py
 chmod +x user-login.sh
-chmod +x user-expire.sh
+chmod +x user-expired.sh
 chmod +x user-limit.sh
 chmod +x limit.sh
 
