@@ -32,7 +32,7 @@ apt-get update; apt-get -y upgrade
 apt-get -y install nginx php5-fpm php5-cli
 
 # install essential package
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
+apt-get -y install bmon iftop htop openvpn nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
 apt-get -y install build-essential
 
 # update apt-file
@@ -186,7 +186,7 @@ chmod +x limit.sh
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
 service nginx start
-service php-fpm start
+service php5-fpm start
 service vnstat restart
 service openvpn restart
 service snmpd restart
