@@ -149,7 +149,7 @@ apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.github.com/ccpbcrawler/autoscript/master/conf/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://raw.github.com/thekillers123/autoscript/master/conf/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
