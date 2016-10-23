@@ -34,7 +34,7 @@ Tested on
 
 ### Debian 7 32bit
 ```
-wget https://raw.github.com/ccpbcrawler/autoscript/master/debian7.sh
+wget https://raw.github.com/thekillers123/autoscript/master/debian7.sh
 bash debian7.sh
 ```
 Tested on
